@@ -33,8 +33,9 @@ public class Ward {
     }
 
     public String showCountOfPlaces() {
-        Optional<Integer> count = Optional.ofNullable(countOfPlaces);
-        return count.map(integer -> "Current count of places : " + integer).orElse("No places specified");
+        return Optional.ofNullable(countOfPlaces)
+                .map(integer -> "Current count of places : " + integer)
+                .orElse("No places specified");
     }
 
     public String getDoctorsNameMessage() {
