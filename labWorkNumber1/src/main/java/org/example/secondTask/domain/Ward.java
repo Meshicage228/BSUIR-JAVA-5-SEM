@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.Optional;
-
-import static java.util.Objects.isNull;
 
 @Getter
 @Setter
@@ -39,12 +36,9 @@ public class Ward {
     }
 
     public String getDoctorsNameMessage() {
-        if (isNull(nameOfDoctor)) {
-            return "Doctor is not specified!";
-        } else if (nameOfDoctor.isEmpty()) {
-            return "Doctor name is blank!";
-        }
-        return nameOfDoctor + " is current doctor";
+        return "Current doctor : " + Optional.ofNullable(nameOfDoctor)
+                .filter(nameOfDoctor -> !nameOfDoctor.isBlank())
+                .orElse("is not specified!");
     }
 
     @Override
