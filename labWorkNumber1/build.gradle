@@ -11,14 +11,15 @@ repositories {
 
 ext{
     versions = [
-        'lombok' : '1.18.34'
+            'lombok' : '1.18.34',
+            'commons_lang' : '3.0'
     ]
 }
 
 dependencies {
     compileOnly "org.projectlombok:lombok:${versions.lombok}"
     annotationProcessor "org.projectlombok:lombok:${versions.lombok}"
-    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+    implementation "org.apache.commons:commons-lang3:${versions.commons_lang}"
 
 
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
