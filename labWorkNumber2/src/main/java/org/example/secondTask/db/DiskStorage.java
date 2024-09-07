@@ -10,7 +10,7 @@ import org.example.secondTask.model.discImpl.TutorialDisk;
 import java.util.ArrayList;
 
 public class DiskStorage {
-    public static ArrayList<AbstractDisk> disks = new ArrayList<>() {{
+    private static final ArrayList<AbstractDisk> disks = new ArrayList<>() {{
         add(new FilmDisk("Titanic", 24, 7.5f));
         add(new FilmDisk("The Whale", 10, 5.55f));
         add(new GameDisk("Team Fortress Orange", 22, 12.13f));
