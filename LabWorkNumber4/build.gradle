@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+ext{
+    versions = [
+            'lombok' : '1.18.34',
+            'commons_lang' : '3.0'
+    ]
+}
+
+dependencies {
+    implementation group: 'org.apache.commons', name: 'commons-math3', version: '3.6.1'
+
+    compileOnly "org.projectlombok:lombok:${versions.lombok}"
+    annotationProcessor "org.projectlombok:lombok:${versions.lombok}"
+    implementation "org.apache.commons:commons-lang3:${versions.commons_lang}"
+}
+
+test {
+    useJUnitPlatform()
+}
