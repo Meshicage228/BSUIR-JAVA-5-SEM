@@ -49,7 +49,7 @@ public class EchoServer extends Thread {
     private Double calculateResult(double[] doubles) {
         Double x = doubles[0];
         Double y = doubles[1];
-        Double z = doubles[3];
+        Double z = doubles[2];
         return calculateAbs(x, y) * calculateSecondValue(z);
     }
 
