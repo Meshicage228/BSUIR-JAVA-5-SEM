@@ -7,15 +7,19 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ClientWindow {
-    private final JFrame frame;
-    private final JTextField ipAddressField;
-    private final JTextField portField;
-    private final JTextField dayField;
-    private final JTextArea outputField;
-    private final JButton connectButton;
-    private final JButton sendDayButton;
+    private JFrame frame;
+    private JTextField ipAddressField;
+    private JTextField portField;
+    private JTextField dayField;
+    private JTextArea outputField;
+    private JButton connectButton;
+    private JButton sendDayButton;
 
     public ClientWindow() {
+        createFrame();
+    }
+
+    private void createFrame(){
         frame = new JFrame("Client Window");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1600, 1600);

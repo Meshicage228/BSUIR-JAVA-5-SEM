@@ -6,7 +6,7 @@ import java.net.Socket;
 
 public class Task1TCP {
     public static void main(String[] args) {
-        try (ServerSocket serverSocket = new ServerSocket(8000);) {
+        try (ServerSocket serverSocket = new ServerSocket(8000)) {
             System.out.println("Server started. Waiting for client...");
 
             Socket socketClient = new Socket("localhost", 8000);
