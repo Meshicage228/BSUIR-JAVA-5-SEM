@@ -1,0 +1,172 @@
+@startuml
+interface org.example.secondTask.service.PrintService {
+~ void printOrder(Order)
+}
+
+class org.example.secondTask.domain.Ward {
+- Integer countOfPlaces
+- String nameOfDoctor
+- Boolean isEmpty
++ String showCountOfPlaces()
++ String getDoctorsNameMessage()
++ String toString()
+}
+
+
+class org.example.firstTask.FirstTask {
+- {static} ArrayList<Ward> wards
++ {static} void main(String[])
+}
+
+
+class org.example.secondTask.service.impl.OrderServiceImpl {
+- DiskService diskService
++ Order createOrder(HashMap<String,Integer>)
+}
+
+
+interface org.example.firstTask.service.WriterInfo {
+~ Integer countEmptyPlacesInWards()
+~ Integer countTotalPlaces()
+}
+
+class org.example.firstTask.model.Ward {
+- Integer countOfPlaces
+- String nameOfDoctor
+- Boolean hasEmptyPlaces
++ {static} Integer countEmptyPlacesInWards(ArrayList<Ward>)
++ {static} Integer countTotalPlaces(ArrayList<Ward>)
++ String toString()
+}
+
+
+class org.example.firstTask.FirstTaskFori {
++ {static} void main(String[])
+}
+
+class org.example.secondTask.service.impl.DiskServiceImpl {
+- DiskStorage storage
++ AbstractDisk putDiskToCart(String,Integer)
+}
+
+
+class org.example.secondTask.model.discImpl.FilmDisk {
++ DiskType getDiskType()
+}
+
+class org.example.secondTask.SecondTask {
+- {static} ArrayList<Ward> wards
++ {static} void main(String[])
+}
+
+
+class org.example.Main {
++ {static} void main(String[])
+}
+
+class org.example.secondTask.util.TaskFactory {
++ {static} DiskStorage getDiskStorage()
++ {static} DiskService getDiskServiceImpl()
++ {static} OrderService gerOrderServiceImpl()
++ {static} PrintService getPrintService()
+}
+
+interface org.example.secondTask.service.OrderService {
+~ Order createOrder(HashMap<String,Integer>)
+}
+
+class org.example.secondTask.model.discImpl.GameDisk {
++ DiskType getDiskType()
+}
+
+enum org.example.secondTask.enums.DiskType {
++  FILM
++  GAME
++  SOFT
++  TUTORIAL
+- String diskDescription
+}
+
+class org.example.secondTask.SecondTask {
+- {static} HashMap<String,Integer> discNames
++ {static} void main(String[])
+}
+
+
+class org.example.secondTask.service.WriterInfo {
+- ArrayList<Ward> wards
++ void showAllInfo()
+}
+
+
+class org.example.secondTask.exception.OutOfStockException {
+}
+class org.example.secondTask.exception.DiskNotFoundException {
+}
+class org.example.secondTask.db.DiskStorage {
+- {static} ArrayList<AbstractDisk> disks
++ AbstractDisk getDiskByName(String)
+}
+
+
+class org.example.secondTask.service.impl.PrintServiceImpl {
+- StringBuilder builder
++ void printOrder(Order)
+}
+
+
+interface org.example.secondTask.service.DiskService {
+~ AbstractDisk putDiskToCart(String,Integer)
+}
+
+class org.example.firstTask.FirstTaskFunctional {
+- {static} List<Predicate<Integer>> handler
+- {static} void handle(Integer)
++ {static} void main(String[])
+}
+
+
+class org.example.secondTask.model.discImpl.SoftDisk {
++ DiskType getDiskType()
+}
+
+abstract class org.example.secondTask.model.AbstractDisk {
+# String diskName
+# Integer count
+# Float price
++ {abstract}DiskType getDiskType()
+}
+
+
+class org.example.secondTask.model.Order {
++ {static} Integer orderCount
+- Float totalCost
+- ArrayList<AbstractDisk> abstractDisks
++ void addDiskToOrder(AbstractDisk)
+}
+
+
+class org.example.secondTask.model.discImpl.TutorialDisk {
++ DiskType getDiskType()
+}
+
+class org.example.firstTask.service.impl.WriterInfoImpl {
+- ArrayList<Ward> wards
++ Integer countEmptyPlacesInWards()
++ Integer countTotalPlaces()
+}
+
+
+
+
+org.example.secondTask.service.OrderService <|.. org.example.secondTask.service.impl.OrderServiceImpl
+org.example.secondTask.service.DiskService <|.. org.example.secondTask.service.impl.DiskServiceImpl
+org.example.secondTask.model.AbstractDisk <|-- org.example.secondTask.model.discImpl.FilmDisk
+org.example.secondTask.model.AbstractDisk <|-- org.example.secondTask.model.discImpl.GameDisk
+org.example.secondTask.exception.RuntimeException <|-- org.example.secondTask.exception.OutOfStockException
+org.example.secondTask.exception.RuntimeException <|-- org.example.secondTask.exception.DiskNotFoundException
+org.example.secondTask.service.PrintService <|.. org.example.secondTask.service.impl.PrintServiceImpl
+org.example.secondTask.model.AbstractDisk <|-- org.example.secondTask.model.discImpl.SoftDisk
+org.example.secondTask.model.AbstractDisk <|-- org.example.secondTask.model.discImpl.TutorialDisk
+org.example.firstTask.service.WriterInfo <|.. org.example.firstTask.service.impl.WriterInfoImpl
+@enduml
