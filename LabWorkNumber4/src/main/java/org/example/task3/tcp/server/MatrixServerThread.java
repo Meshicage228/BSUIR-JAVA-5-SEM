@@ -2,9 +2,6 @@ package org.example.task3.tcp.server;
 
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import org.apache.commons.math3.linear.MatrixUtils;
-import org.apache.commons.math3.linear.RealMatrix;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -45,14 +42,31 @@ public class MatrixServerThread extends Thread {
             e.printStackTrace();
         }
     }
-
     private String getWeather(String day) {
-        switch (day) {
+        switch (day.toLowerCase()) {
             case "monday" -> {
-                return "ahahahahahahaha";
+                return "so froggy and dark at monday";
+            }
+            case "tuesday" -> {
+                return "so bright at tuesday!";
+            }
+            case "wednesday" -> {
+                return "so cold at wednesday!";
+            }
+            case "thursday" -> {
+                return "so frogy at thursday!";
+            }
+            case "friday" -> {
+                return "so bright and cold at friday!";
+            }
+            case "saturday" -> {
+                return "dark at saturday!";
+            }
+            case "sunday" -> {
+                return "very hoy at sunday!";
             }
             default -> {
-                return "gsagssga";
+                return "incorrect day specified";
             }
         }
     }
