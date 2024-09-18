@@ -4,6 +4,7 @@ import lombok.SneakyThrows;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -25,6 +26,7 @@ public class EchoServer extends Thread {
             DatagramPacket packet = receivePacket();
             double[] doubles = deserializeDoubles(packet.getData());
             Double result = calculateResult(doubles);
+            writeVariablesToFile(result, doubles);
             sendResponse(packet.getAddress(), packet.getPort(), result);
         }
     }
@@ -68,5 +70,16 @@ public class EchoServer extends Thread {
         double osn = Math.abs(Math.cos(x) - Math.pow(Math.E, y));
         double pow = Math.pow(osn, 1 + 2 * Math.pow(Math.log(y), 2));
         return pow;
+    }
+
+    public void writeVariablesToFile(double result, double ... variables) {
+        try (FileWriter writer = new FileWriter("LabWorkNumber4/src/main/java/org/example/task2/variables.txt")){
+            writer.write("x = " + variables[0] + "\n");
+            writer.write("y = " + variables[1] + "\n");
+            writer.write("z = " + variables[2] + "\n");
+            writer.write("Result of formula : " + result + "\n");
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+        }
     }
 }
