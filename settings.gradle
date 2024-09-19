@@ -1,3 +1,4 @@
 rootProject.name = "BSUIR-JAVA-5-SEM"
 include 'labWorkNumber1'
 include 'labWorkNumber2'
+include 'labWorkNumber3'

@@ -1,0 +1,121 @@
+@startuml
+class org.example.Main {
++ {static} void main(String[])
+}
+
+class org.example.SecondTask.SecondTask {
++ {static} void main(String[])
+}
+
+class org.example.firstTask.model.Engine {
+# Integer enginePower
+# EngineType engineType
+}
+
+class org.example.SecondTask.model.Bus {
+- Integer countOfPlaces
++ String printInfo()
++ Brand getBrand()
+}
+
+
+class org.example.firstTask.model.impl.Car {
+- Double fuelConsumption
+- Integer accelerationTime
++ String toString()
++ Brand getBrand()
+}
+
+
+class org.example.firstTask.model.impl.Truck {
+- Double payload
+- String bodyType
++ String toString()
++ Brand getBrand()
+}
+
+
+class org.example.SecondTask.model.Minivan {
+- Integer back
++ String printInfo()
++ Brand getBrand()
+}
+
+
+interface org.example.SecondTask.service.Vehicle {
+~ Brand getBrand()
+}
+
+enum org.example.firstTask.enums.Brand {
++  VOLVO
++  RENAULT
++  MERCEDES
++  MAZ
++  MAN
++  HONDA
+}
+
+class org.example.SecondTask.model.Pickap {
+- String bodyType
++ String printInfo()
++ Brand getBrand()
+}
+
+
+abstract class org.example.SecondTask.model.abstr.Car {
+# Double fuelConsumption
+# Integer accelerationTime
+}
+
+class org.example.SecondTask.model.Truck {
+- Double payload
+- String bodyType
++ Brand getBrand()
++ String printInfo()
+}
+
+
+class org.example.firstTask.model.impl.Bus {
+- Integer countOfPlaces
++ String toString()
++ Brand getBrand()
+}
+
+
+interface org.example.SecondTask.service.Object {
+~ String printInfo()
+}
+
+enum org.example.firstTask.enums.EngineType {
++  CARBURETOR
++  DIESEL
+}
+
+class org.example.firstTask.FirstTask {
+- {static} ArrayList<Vehicle> vehicles
++ {static} void main(String[])
+}
+
+
+abstract class org.example.firstTask.model.abstr.Vehicle {
+# Engine engine
+# Float carWeight
+# Float mileage
++ {abstract}Brand getBrand()
+}
+
+
+
+
+org.example.SecondTask.service.Vehicle <|.. org.example.SecondTask.model.Bus
+org.example.SecondTask.service.Object <|.. org.example.SecondTask.model.Bus
+org.example.firstTask.model.abstr.Vehicle <|-- org.example.firstTask.model.impl.Car
+org.example.firstTask.model.abstr.Vehicle <|-- org.example.firstTask.model.impl.Truck
+org.example.SecondTask.model.abstr.Car <|-- org.example.SecondTask.model.Minivan
+org.example.SecondTask.model.abstr.Car <|-- org.example.SecondTask.model.Pickap
+org.example.SecondTask.service.Vehicle <|.. org.example.SecondTask.model.abstr.Car
+org.example.SecondTask.service.Object <|.. org.example.SecondTask.model.abstr.Car
+org.example.SecondTask.service.Vehicle <|.. org.example.SecondTask.model.Truck
+org.example.SecondTask.service.Object <|.. org.example.SecondTask.model.Truck
+org.example.firstTask.model.impl.Car <|-- org.example.firstTask.model.impl.Bus
+@enduml
