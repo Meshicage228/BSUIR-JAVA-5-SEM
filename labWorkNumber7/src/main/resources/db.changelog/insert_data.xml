@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-master.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="insert_data_cities_table" author="Vlad">
+        <insert tableName="cities" schemaName="public">
+            <column name="city_id" value="1" />
+            <column name="name" value="Minsk" />
+            <column name="square" value="57459" />
+            <column name="year_foundation" value="1789" />
+            <column name="citizen_count" value="4876543" />
+        </insert>
+
+        <insert tableName="cities" schemaName="public">
+            <column name="city_id" value="2" />
+            <column name="name" value="Brest" />
+            <column name="square" value="415464" />
+            <column name="year_foundation" value="1547" />
+            <column name="citizen_count" value="654889" />
+        </insert>
+
+        <insert tableName="cities" schemaName="public">
+            <column name="city_id" value="3" />
+            <column name="name" value="Vitebsk" />
+            <column name="square" value="439852" />
+            <column name="year_foundation" value="1565" />
+            <column name="citizen_count" value="2560876" />
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert_data_citizensType_table" author="Vlad">
+        <insert tableName="citizenTypes" schemaName="public">
+            <column name="citizen_id" value="1" />
+            <column name="type" value="RUNNING" />
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

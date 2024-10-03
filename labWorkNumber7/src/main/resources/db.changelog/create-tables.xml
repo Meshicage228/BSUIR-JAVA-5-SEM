@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-master.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="create-cityTable" author="Vlad">
+        <createTable tableName="cities" schemaName="public">
+            <column name="city_id" type="BIGINT" defaultValueComputed="nextval('sequences.city-sequence')"
+                    remarks="user ID">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)" remarks="city title">
+                <constraints nullable="false"/>
+            </column>
+            <column name="square" type="BIGINT" remarks="total square of city">
+            </column>
+            <column name="year_foundation" type="SMALLINT" remarks="year of foundation">
+            </column>
+            <column name="citizen_count" type="BIGINT" remarks="count of citizens">
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-citizenType" author="Vlad">
+        <createTable tableName="citizenTypes" schemaName="public">
+            <column name="citizen_id" type="BIGINT" defaultValueComputed="nextval('sequences.city-sequence')"
+                    remarks="citizen ID">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="type" type="VARCHAR(255)" remarks="citizen type">
+                <constraints nullable="false"/>
+            </column>
+            <column name="language" type="VARCHAR(255)" remarks="spoken language">
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

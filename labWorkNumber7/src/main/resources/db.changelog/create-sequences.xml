@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-master.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="create_city_sequence" author="Vlad">
+        <createSequence sequenceName="city-sequence" incrementBy="1" minValue="3" maxValue="500" schemaName="sequences"/>
+    </changeSet>
+
+    <changeSet id="create_citizenType_sequence" author="Vlad">
+        <createSequence sequenceName="citizenType-sequence" incrementBy="1" minValue="5" maxValue="500" schemaName="sequences"/>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    versions = [
+        'servlet' : '6.0.0',
+        'lombok' : '1.18.34',
+        'postgresql' : '42.2.6',
+        'liquibase' : '4.27.0'
+    ]
+}
+
+dependencies {
+    compileOnly "jakarta.servlet:jakarta.servlet-api:${versions.servlet}"
+
+    compileOnly "org.projectlombok:lombok:${versions.lombok}"
+    annotationProcessor "org.projectlombok:lombok:${versions.lombok}"
+
+    implementation "org.postgresql:postgresql:${versions.postgresql}"
+    implementation "org.liquibase:liquibase-core:${versions.liquibase}"
+
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
