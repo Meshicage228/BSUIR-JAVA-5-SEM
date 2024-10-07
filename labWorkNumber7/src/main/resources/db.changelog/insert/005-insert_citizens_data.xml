@@ -3,8 +3,11 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <include file="create-sequences.xml" relativeToChangelogFile="true"/>
-    <include file="create-tables.xml" relativeToChangelogFile="true"/>
-    <include file="insert_data.xml" relativeToChangelogFile="true"/>
+    <changeSet id="insert_data_citizensType_table" author="Vlad">
+        <insert tableName="citizenTypes" schemaName="public">
+            <column name="citizen_id" value="1" />
+            <column name="type" value="RUNNING" />
+        </insert>
+    </changeSet>
 
 </databaseChangeLog>
