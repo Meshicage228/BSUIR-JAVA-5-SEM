@@ -14,7 +14,19 @@
             </column>
             <column name="language" type="VARCHAR(255)" remarks="spoken language">
             </column>
+            <column name="population" type="BIGINT" remarks="city population">
+            </column>
+            <column name="city_id" type="BIGINT" remarks="city id">
+            </column>
         </createTable>
+    </changeSet>
+
+    <changeSet id="modify_fk_citizen-city_id" author="Vlad">
+        <addForeignKeyConstraint baseTableName="citizenTypes" baseColumnNames="city_id"
+                                 baseTableSchemaName="public"
+                                 constraintName="fk_user_id" referencedTableName="cities"
+                                 referencedTableSchemaName="public"
+                                 referencedColumnNames="id"/>
     </changeSet>
 
 </databaseChangeLog>

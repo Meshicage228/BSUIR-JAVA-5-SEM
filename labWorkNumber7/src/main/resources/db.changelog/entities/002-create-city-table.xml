@@ -5,18 +5,16 @@
 
     <changeSet id="create-cityTable" author="Vlad">
         <createTable tableName="cities" schemaName="public">
-            <column name="city_id" type="BIGINT" defaultValueComputed="nextval('sequences.city-sequence')"
-                    remarks="user ID">
+            <column name="id" type="BIGINT" defaultValueComputed="nextval('sequences.city-sequence')"
+                    remarks="city ID">
                 <constraints primaryKey="true" nullable="false" unique="true"/>
             </column>
-            <column name="name" type="VARCHAR(255)" remarks="city title">
+            <column name="title" type="VARCHAR(255)" remarks="city title">
                 <constraints nullable="false"/>
             </column>
             <column name="square" type="BIGINT" remarks="total square of city">
             </column>
             <column name="year_foundation" type="SMALLINT" remarks="year of foundation">
-            </column>
-            <column name="citizen_count" type="BIGINT" remarks="count of citizens">
             </column>
         </createTable>
     </changeSet>

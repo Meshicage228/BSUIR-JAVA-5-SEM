@@ -6,7 +6,38 @@
     <changeSet id="insert_data_citizensType_table" author="Vlad">
         <insert tableName="citizenTypes" schemaName="public">
             <column name="citizen_id" value="1" />
-            <column name="type" value="RUNNING" />
+            <column name="type" value="MINSK_P" />
+            <column name="language" value="RU" />
+            <column name="population" value="566456" />
+            <column name="city_id" value="1" />
+        </insert>
+        <insert tableName="citizenTypes" schemaName="public">
+            <column name="citizen_id" value="2" />
+            <column name="type" value="BREST_P" />
+            <column name="language" value="RU" />
+            <column name="population" value="34535" />
+            <column name="city_id" value="2" />
+        </insert>
+        <insert tableName="citizenTypes" schemaName="public">
+            <column name="citizen_id" value="3" />
+            <column name="type" value="CHECZH" />
+            <column name="language" value="CHEZCH" />
+            <column name="population" value="4567" />
+            <column name="city_id" value="1" />
+        </insert>
+        <insert tableName="citizenTypes" schemaName="public">
+            <column name="citizen_id" value="4" />
+            <column name="type" value="RUSSIAN" />
+            <column name="language" value="RU" />
+            <column name="population" value="345276" />
+            <column name="city_id" value="1" />
+        </insert>
+        <insert tableName="citizenTypes" schemaName="public">
+            <column name="citizen_id" value="5" />
+            <column name="type" value="POLISH" />
+            <column name="language" value="RU" />
+            <column name="population" value="1234" />
+            <column name="city_id" value="2" />
         </insert>
     </changeSet>
 

@@ -6,27 +6,24 @@
     <changeSet id="insert_data_cities_table" author="Vlad">
 
         <insert tableName="cities" schemaName="public">
-            <column name="city_id" value="1" />
+            <column name="id" value="1" />
             <column name="name" value="Minsk" />
             <column name="square" value="57459" />
             <column name="year_foundation" value="1789" />
-            <column name="citizen_count" value="4876543" />
         </insert>
 
         <insert tableName="cities" schemaName="public">
-            <column name="city_id" value="2" />
+            <column name="id" value="2" />
             <column name="name" value="Brest" />
             <column name="square" value="415464" />
             <column name="year_foundation" value="1547" />
-            <column name="citizen_count" value="654889" />
         </insert>
 
         <insert tableName="cities" schemaName="public">
-            <column name="city_id" value="3" />
+            <column name="id" value="3" />
             <column name="name" value="Vitebsk" />
             <column name="square" value="439852" />
             <column name="year_foundation" value="1565" />
-            <column name="citizen_count" value="2560876" />
         </insert>
     </changeSet>
 
