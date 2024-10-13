@@ -14,7 +14,7 @@
             </column>
             <column name="square" type="BIGINT" remarks="total square of city">
             </column>
-            <column name="year_foundation" type="SMALLINT" remarks="year of foundation">
+            <column name="year_foundation" type="DATE" remarks="year of foundation">
             </column>
         </createTable>
     </changeSet>

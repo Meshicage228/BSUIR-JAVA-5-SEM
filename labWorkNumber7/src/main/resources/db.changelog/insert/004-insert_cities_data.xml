@@ -7,23 +7,23 @@
 
         <insert tableName="cities" schemaName="public">
             <column name="id" value="1" />
-            <column name="name" value="Minsk" />
+            <column name="title" value="Minsk" />
             <column name="square" value="57459" />
-            <column name="year_foundation" value="1789" />
+            <column name="year_foundation" value="1477-05-16" />
         </insert>
 
         <insert tableName="cities" schemaName="public">
             <column name="id" value="2" />
-            <column name="name" value="Brest" />
+            <column name="title" value="Brest" />
             <column name="square" value="415464" />
-            <column name="year_foundation" value="1547" />
+            <column name="year_foundation" value="1456-05-16" />
         </insert>
 
         <insert tableName="cities" schemaName="public">
             <column name="id" value="3" />
-            <column name="name" value="Vitebsk" />
+            <column name="title" value="Vitebsk" />
             <column name="square" value="439852" />
-            <column name="year_foundation" value="1565" />
+            <column name="year_foundation" value="1453-12-12" />
         </insert>
     </changeSet>
 
