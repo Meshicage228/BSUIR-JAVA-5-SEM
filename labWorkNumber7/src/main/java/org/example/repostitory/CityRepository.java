@@ -2,18 +2,24 @@ package org.example.repostitory;
 
 import org.example.config.DBConfig;
 import org.example.model.City;
-
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
+
+import static org.example.util.SQLscripts.CREATE_CITY;
 
 public class CityRepository implements CRUDRepository<City, Long> {
     @Override
     public void save(City city) {
         try (Connection connection = DBConfig.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(null)) {
+             PreparedStatement preparedStatement = connection.prepareStatement(CREATE_CITY)) {
+             preparedStatement.setString(1, city.getTitle());
+             preparedStatement.setFloat(2, city.getSquare());
+             preparedStatement.setDate(3, Date.valueOf(city.getFoundationYear()));
 
+             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
