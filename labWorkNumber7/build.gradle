@@ -12,17 +12,20 @@ repositories {
 
 ext {
     versions = [
-        'servlet' : '6.0.0',
-        'lombok' : '1.18.34',
-        'postgresql' : '42.2.6',
-        'liquibase' : '4.27.0',
-        'servlet_api' : '4.0.1',
-        'jackson' : '2.17.0'
+            'servlet'    : '6.0.0',
+            'lombok'     : '1.18.34',
+            'postgresql' : '42.2.6',
+            'liquibase'  : '4.27.0',
+            'servlet_api': '4.0.1',
+            'jackson'    : '2.17.0',
+            'jstl'       : '1.2'
     ]
 }
 
 dependencies {
     implementation "javax.servlet:javax.servlet-api:${versions.servlet_api}"
+    implementation  "javax.servlet:jstl:${versions.jstl}"
+
     implementation "com.fasterxml.jackson.core:jackson-databind:${versions.jackson}"
 
     compileOnly "org.projectlombok:lombok:${versions.lombok}"

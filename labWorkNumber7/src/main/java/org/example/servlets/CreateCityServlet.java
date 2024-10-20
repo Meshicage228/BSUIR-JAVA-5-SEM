@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.model.City;
 import org.example.service.CityService;
 import org.example.util.AppFactory;
+
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 
-@WebServlet(name = "Main page", urlPatterns = "/citySinglePage")
-public class CityServlet extends HttpServlet {
+@WebServlet(name = "Create new city servlet", urlPatterns = "/cities/create")
+public class CreateCityServlet extends HttpServlet {
     private CityService cityService;
     private ObjectMapper objectMapper;
 
@@ -29,7 +31,7 @@ public class CityServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         req.setCharacterEncoding("UTF-8");
         String jsonString = objectMapper.writeValueAsString(new HashMap<String, Object>() {{
             put("title", req.getParameter("title"));
@@ -41,7 +43,9 @@ public class CityServlet extends HttpServlet {
 
         cityService.save(city);
 
-        resp.sendRedirect("/city/city-create.jsp");
+        req.setAttribute("Success-save", "city successfully saved!");
+
+        req.getRequestDispatcher("/city/city-create.jsp").forward(req, resp);
     }
 
     @Override

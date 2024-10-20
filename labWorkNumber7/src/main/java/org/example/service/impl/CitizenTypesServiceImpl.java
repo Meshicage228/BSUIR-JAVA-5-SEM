@@ -26,8 +26,8 @@ public class CitizenTypesServiceImpl implements CitizenTypesService {
         return cityTypesRepository.update(id, citizenTypes);
     }
 
-    @Override
-    public void delete(Long id) {
-        cityTypesRepository.deleteById(id);
-    }
+//    @Override
+//    public void delete(Long id) {
+//        cityTypesRepository.deleteById(id);
+//    }
 }

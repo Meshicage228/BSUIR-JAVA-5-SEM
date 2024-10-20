@@ -6,6 +6,7 @@ import liquibase.database.DatabaseFactory;
 import liquibase.database.jvm.JdbcConnection;
 import liquibase.exception.LiquibaseException;
 import liquibase.resource.ClassLoaderResourceAccessor;
+import lombok.experimental.UtilityClass;
 import org.postgresql.Driver;
 
 import java.sql.Connection;
@@ -14,6 +15,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
+@UtilityClass
 public class DBConfig {
 
     static {
@@ -24,7 +26,7 @@ public class DBConfig {
         }
     }
 
-    public static Connection getConnection() {
+    public Connection getConnection() {
         try {
             Properties info = new Properties();
             info.setProperty("url", "jdbc:postgresql://localhost:15431/labDB");
@@ -38,7 +40,7 @@ public class DBConfig {
         }
     }
 
-    public static void liquibaseStart(){
+    public void liquibaseStart(){
         try (Connection connection = getConnection();
              Statement statement = connection.createStatement()){
 

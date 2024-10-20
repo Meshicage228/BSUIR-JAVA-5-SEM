@@ -23,10 +23,10 @@ public class CityServiceImpl implements CityService {
         cityRepository.save(city);
     }
 
-    @Override
-    public void delete(Long cityId) {
-        cityRepository.deleteById(cityId);
-    }
+//    @Override
+//    public void delete(Long cityId) {
+//        cityRepository.deleteById(cityId);
+//    }
 
     @Override
     public City update(Long id, City city) {

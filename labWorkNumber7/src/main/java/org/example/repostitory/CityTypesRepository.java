@@ -19,15 +19,15 @@ public class CityTypesRepository implements CRUDRepository<CitizenTypes, Long>{
         }
     }
 
-    @Override
-    public void deleteById(Long aLong) {
-        try (Connection connection = DBConfig.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(null)) {
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    @Override
+//    public void deleteById(Long aLong) {
+//        try (Connection connection = DBConfig.getConnection();
+//             PreparedStatement preparedStatement = connection.prepareStatement(null)) {
+//
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 
     @Override
     public CitizenTypes update(Long aLong, CitizenTypes citizenTypes) {

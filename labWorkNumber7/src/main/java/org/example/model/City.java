@@ -2,6 +2,8 @@ package org.example.model;
 
 import lombok.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -12,4 +14,5 @@ public class City {
     private String title;
     private Float square;
     private String foundationYear;
+    List<CitizenTypes> citizenTypesList;
 }

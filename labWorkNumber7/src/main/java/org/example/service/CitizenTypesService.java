@@ -6,5 +6,5 @@ public interface CitizenTypesService {
     CitizenTypes getById(Long id);
     void save(CitizenTypes citizenTypes);
     CitizenTypes update(Long id, CitizenTypes citizenTypes);
-    void delete(Long id);
+//    void delete(Long id);
 }
