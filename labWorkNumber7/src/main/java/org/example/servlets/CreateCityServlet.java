@@ -2,9 +2,7 @@ package org.example.servlets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.model.City;
-import org.example.service.CityService;
-import org.example.util.AppFactory;
-
+import org.example.repostitory.CityRepository;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,12 +13,12 @@ import java.util.HashMap;
 
 @WebServlet(name = "Create new city servlet", urlPatterns = "/cities/create")
 public class CreateCityServlet extends HttpServlet {
-    private CityService cityService;
+    private CityRepository cityRepository;
     private ObjectMapper objectMapper;
 
     @Override
     public void init() {
-        cityService = AppFactory.getCityService();
+        cityRepository = new CityRepository();
         objectMapper = new ObjectMapper();
     }
 
@@ -41,16 +39,10 @@ public class CreateCityServlet extends HttpServlet {
 
         City city = objectMapper.readValue(jsonString, City.class);
 
-        cityService.save(city);
+        cityRepository.save(city);
 
         req.setAttribute("Success-save", "city successfully saved!");
 
         req.getRequestDispatcher("/city/city-create.jsp").forward(req, resp);
-    }
-
-    @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        System.out.println("update");
-        resp.sendRedirect("/city/city-create.jsp");
     }
 }

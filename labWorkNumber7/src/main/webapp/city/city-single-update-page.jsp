@@ -3,12 +3,13 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>Update City</title>
+    <style> <%@include file="/WEB-INF/static/update-city-style.css" %> </style>
 </head>
 <body>
 
 <div class="city-details">
-    <h1>Update City Details</h1>
+    <h1>Обновить Город</h1>
     <c:if test="${not empty city}">
         <form action="/city/update/${city.id}" method="post">
             <div class="detail-item">
@@ -30,7 +31,9 @@
         <div>Город не найден.</div>
     </c:if>
 
-    <button><a href="/cities">На главную</a></button>
+    <div class="back-button">
+        <button><a href="/cities">На главную</a></button>
+    </div>
 </div>
 </body>
 </html>

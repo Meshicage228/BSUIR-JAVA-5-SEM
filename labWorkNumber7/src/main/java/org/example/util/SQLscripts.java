@@ -37,7 +37,6 @@ public class SQLscripts {
                      JOIN public."citizenTypes" cT ON cities.id = cT.city_id
             WHERE res.popSum <= ?
             """;
-
     public String SELECT_ANCIENT_TYPE = """
             SELECT * FROM "citizenTypes"
             JOIN public.cities c on c.id = "citizenTypes".city_id
