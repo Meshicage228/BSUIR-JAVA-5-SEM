@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-master.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="create-doctors" author="Vlad">
+        <createTable tableName="doctors" schemaName="public">
+            <column name="id" type="BIGINT" autoIncrement="true"
+                    remarks="patient ID">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="surname" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="patronymic" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="birth_date" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="position" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="specialization" type="VARCHAR(30)">
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

@@ -141,7 +141,7 @@ public class GuiInterface extends JFrame {
                 preparedStatement.setString(1, surname);
                 preparedStatement.setString(2, name);
                 preparedStatement.setString(3, patronymic);
-                preparedStatement.setString(4, birthDate);
+                preparedStatement.setDate(4, Date.valueOf(birthDate));
                 preparedStatement.setString(5, position);
                 preparedStatement.setString(6, specialization);
 
@@ -168,6 +168,7 @@ public class GuiInterface extends JFrame {
     }
 
     public static void main(String[] args) {
+        DBconfig.liquibaseStart();
         SwingUtilities.invokeLater(GuiInterface::new);
     }
 }

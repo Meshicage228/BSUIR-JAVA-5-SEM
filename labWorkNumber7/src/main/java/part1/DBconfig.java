@@ -50,7 +50,7 @@ public class DBconfig {
             statement.executeUpdate(createSchemaQuery);
             Database database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(connection));
 
-            Liquibase liquibase = new Liquibase("db.changelog/change-logs-master.xml", new ClassLoaderResourceAccessor(), database);
+            Liquibase liquibase = new Liquibase("db.changelog1/change-logs-master-first.xml", new ClassLoaderResourceAccessor(), database);
             liquibase.update();
             System.out.println();
         } catch (LiquibaseException | SQLException e) {
