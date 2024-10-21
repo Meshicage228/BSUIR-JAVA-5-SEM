@@ -14,5 +14,5 @@ public class City {
     private String title;
     private Float square;
     private String foundationYear;
-    List<CitizenTypes> citizenTypesList;
+    private List<CitizenTypes> citizenTypesList;
 }
