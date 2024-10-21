@@ -75,6 +75,14 @@ public class SearchServlet extends HttpServlet {
 
     private void searchCityByPopulation(HttpServletRequest request, HttpServletResponse response) {
         String populationStr = request.getParameter("population");
+
+        if(populationStr.isBlank() || populationStr.isEmpty()){
+            try {
+                request.getRequestDispatcher("/city/cities-main-page.jsp").forward(request, response);
+            } catch (ServletException | IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
         int population = Integer.parseInt(populationStr);
 
         List<City> cities = cityRepository.findAllByPopulationLessThan(population);
