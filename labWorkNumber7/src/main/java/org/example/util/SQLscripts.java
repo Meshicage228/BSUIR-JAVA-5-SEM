@@ -43,4 +43,13 @@ public class SQLscripts {
             ORDER BY c.year_foundation ASC
             LIMIT 1;
             """;
+
+    public String DELETE_CITY_BY_ID = """
+            DELETE FROM cities
+            WHERE id = ?;
+            """;
+    public String DELETE_CATEGORY_BY_CITY_ID = """
+            DELETE FROM "citizenTypes"
+            WHERE city_id = ?;
+            """;
 }

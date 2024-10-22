@@ -83,6 +83,28 @@ public class CityRepository implements CRUDRepository<City, Long> {
         return executeQuery(sql, null);
     }
 
+    @Override
+    public void deleteById(Long id){
+        try (Connection connection = DBConfig.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_CITY_BY_ID)) {
+            deleteCategoryByCityId(id);
+            preparedStatement.setLong(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void deleteCategoryByCityId(Long id){
+        try (Connection connection = DBConfig.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_CATEGORY_BY_CITY_ID)) {
+            preparedStatement.setLong(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private void executeUpdate(String sql, PreparedStatementSetter setter) {
         try (Connection connection = DBConfig.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {

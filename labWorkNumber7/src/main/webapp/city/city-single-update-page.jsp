@@ -26,6 +26,9 @@
             </div>
             <input type="submit" value="Обновить">
         </form>
+        <form action="/city/delete/${city.id}" method="post">
+            <input type="submit" value="Удалить" style="background: red">
+        </form>
     </c:if>
     <c:if test="${empty city}">
         <div>Город не найден.</div>
