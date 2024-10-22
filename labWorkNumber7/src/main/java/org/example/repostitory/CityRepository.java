@@ -45,7 +45,7 @@ public class CityRepository implements CRUDRepository<City, Long> {
 
     public List<City> findAllByCityTitleAndLanguage(String cityTitle, String language) {
         return executeQuery(SELECT_CITIZENS_BY_CITY_TITLE_AND_LANGUAGE, ps -> {
-            ps.setString(1, cityTitle);
+            ps.setString(1, "%" + cityTitle + "%");
             ps.setString(2, language);
         });
     }

@@ -20,7 +20,7 @@ public class SQLscripts {
     public String SELECT_CITIZENS_BY_CITY_TITLE_AND_LANGUAGE = """
             SELECT * FROM "citizenTypes" as type
             JOIN public.cities c on c.id = type.city_id
-            WHERE c.title = ? AND type.language = ?
+            WHERE c.title LIKE ? AND type.language = ?
             """;
     public String SELECT_CITIES_BY_CITY_TITLE = """
             SELECT * FROM "citizenTypes" AS tp
