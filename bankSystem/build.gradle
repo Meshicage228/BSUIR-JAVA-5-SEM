@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group = 'by.meshicage'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('lombok', '1.18.34')
+    set('commons_lang', '3.0')
+}
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:${lombok}"
+    annotationProcessor "org.projectlombok:lombok:${lombok}"
+    implementation "org.apache.commons:commons-lang3:${commons_lang}"
+    implementation 'org.slf4j:slf4j-api:2.0.7'
+    implementation 'ch.qos.logback:logback-classic:1.4.7'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
