@@ -11,18 +11,19 @@ repositories {
 
 ext {
     set('lombok', '1.18.34')
-    set('commons_lang', '3.0')
+    set('mockito', '5.5.0')
+    set('junit', '5.10.0')
 }
 
 dependencies {
     compileOnly "org.projectlombok:lombok:${lombok}"
     annotationProcessor "org.projectlombok:lombok:${lombok}"
-    implementation "org.apache.commons:commons-lang3:${commons_lang}"
-    implementation 'org.slf4j:slf4j-api:2.0.7'
-    implementation 'ch.qos.logback:logback-classic:1.4.7'
 
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junit}"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:${junit}"
+    testImplementation "org.mockito:mockito-core:${mockito}"
+    testImplementation "org.mockito:mockito-junit-jupiter:${mockito}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junit}"
 }
 
 test {
