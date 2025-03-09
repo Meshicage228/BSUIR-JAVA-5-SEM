@@ -30,7 +30,7 @@ public class BankServiceImpl implements BankService {
                             return true;
                         })
                         .orElse(false))
-                .orElse(false);
+                .orElseThrow(RuntimeException::new);
     }
 
     @Override

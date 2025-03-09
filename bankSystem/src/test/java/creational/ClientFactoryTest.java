@@ -1,7 +1,7 @@
 package creational;
 
 import by.meshicage.entity.bank.BankAccount;
-import by.meshicage.factories.AccountFactory;
+import by.meshicage.util.factories.AccountFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

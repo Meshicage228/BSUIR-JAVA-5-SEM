@@ -1,6 +1,6 @@
 package behavioral;
 
-import by.meshicage.factories.AccountFactory;
+import by.meshicage.util.factories.AccountFactory;
 import by.meshicage.service.impl.AccountComposite;
 import by.meshicage.service.impl.BalanceChecker;
 import org.junit.jupiter.api.BeforeEach;

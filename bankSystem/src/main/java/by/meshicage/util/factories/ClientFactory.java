@@ -1,4 +1,4 @@
-package by.meshicage.factories;
+package by.meshicage.util.factories;
 
 import by.meshicage.entity.bank.BankAccount;
 import by.meshicage.entity.clients.abstr.Client;
